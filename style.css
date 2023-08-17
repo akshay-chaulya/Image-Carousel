@@ -23,6 +23,8 @@ body {
     position: absolute;
     inset: 0;
     opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
 }
 
 .slide > img {
@@ -34,7 +36,9 @@ body {
 }
 
 .slide[data-active] {
+    z-index: 1;
     opacity: 1;
+    transition: 0ms;
 }
 
 .carousel-button {
@@ -58,4 +62,16 @@ body {
 .carousel-button:hover {
     background-color: rgba(0, 0, 0, .2);
     
+}
+
+.carousel-button:hover.carousel-button > img {
+    filter: invert(1) opacity(.9);
+}
+
+.prev {
+    left: 1rem;
+}
+
+.next {
+    right: 1rem;
 }
